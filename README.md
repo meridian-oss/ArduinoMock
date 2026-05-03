@@ -1,0 +1,2 @@
+# ArduinoMock
+PlatformIOのnativeで動作させるためのArduinoのMockです。Arduino.hをオーバーライドします。
