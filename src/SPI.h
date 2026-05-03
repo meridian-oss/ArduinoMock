@@ -2,8 +2,8 @@
 #ifndef SPI_h
 #define SPI_h
 
-#include <stdint.h>
 #include <stddef.h>
+#include <stdint.h>
 
 // ---------------------------------------------------------------------------
 // SPI data-mode constants
@@ -29,18 +29,18 @@
 // ---------------------------------------------------------------------------
 class SPISettings {
 public:
-    SPISettings() : _clock(4000000), _bitOrder(1 /*MSBFIRST*/), _dataMode(SPI_MODE0) {}
-    SPISettings(uint32_t clock, uint8_t bitOrder, uint8_t dataMode)
-        : _clock(clock), _bitOrder(bitOrder), _dataMode(dataMode) {}
+  SPISettings() : _clock(4000000), _bitOrder(1 /*MSBFIRST*/), _dataMode(SPI_MODE0) {}
+  SPISettings(uint32_t clock, uint8_t bitOrder, uint8_t dataMode)
+      : _clock(clock), _bitOrder(bitOrder), _dataMode(dataMode) {}
 
-    uint32_t clock()    const { return _clock; }
-    uint8_t  bitOrder() const { return _bitOrder; }
-    uint8_t  dataMode() const { return _dataMode; }
+  uint32_t clock() const { return _clock; }
+  uint8_t bitOrder() const { return _bitOrder; }
+  uint8_t dataMode() const { return _dataMode; }
 
 private:
-    uint32_t _clock;
-    uint8_t  _bitOrder;
-    uint8_t  _dataMode;
+  uint32_t _clock;
+  uint8_t _bitOrder;
+  uint8_t _dataMode;
 };
 
 // ---------------------------------------------------------------------------
@@ -48,23 +48,23 @@ private:
 // ---------------------------------------------------------------------------
 class SPIClass {
 public:
-    void begin();
-    void end();
+  void begin();
+  void end();
 
-    void beginTransaction(SPISettings settings);
-    void endTransaction();
+  void beginTransaction(SPISettings settings);
+  void endTransaction();
 
-    // Single-byte transfer
-    uint8_t  transfer(uint8_t data);
-    // 16-bit transfer
-    uint16_t transfer16(uint16_t data);
-    // Buffer transfer (in-place)
-    void     transfer(void *buf, size_t count);
+  // Single-byte transfer
+  uint8_t transfer(uint8_t data);
+  // 16-bit transfer
+  uint16_t transfer16(uint16_t data);
+  // Buffer transfer (in-place)
+  void transfer(void *buf, size_t count);
 
-    // Legacy clock-divider API
-    void setBitOrder(uint8_t bitOrder);
-    void setDataMode(uint8_t dataMode);
-    void setClockDivider(uint8_t divider);
+  // Legacy clock-divider API
+  void setBitOrder(uint8_t bitOrder);
+  void setDataMode(uint8_t dataMode);
+  void setClockDivider(uint8_t divider);
 };
 
 extern SPIClass SPI;
