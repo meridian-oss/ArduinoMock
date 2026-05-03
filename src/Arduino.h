@@ -195,4 +195,9 @@ void setAnalogValue(uint8_t pin, int value);
 #include "HardwareSerial.h"
 #include "WString.h"
 
+// ---------------------------------------------------------------------------
+// Include the ESP logger for logging support
+// ---------------------------------------------------------------------------
+#include "esp_logger.h"
+
 #endif // Arduino_h
