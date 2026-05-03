@@ -1,0 +1,22 @@
+{
+  "name": "ArduinoMock",
+  "version": "1.0.0",
+  "description": "Arduino mock library for PlatformIO native builds. Overrides Arduino.h to support all Arduino reference APIs with console output for Serial/SPI/I2C.",
+  "keywords": ["arduino", "mock", "native", "testing", "platformio"],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/meridian-oss/ArduinoMock"
+  },
+  "authors": [
+    {
+      "name": "meridian-oss"
+    }
+  ],
+  "license": "MIT",
+  "frameworks": "*",
+  "platforms": "native",
+  "build": {
+    "srcDir": "src",
+    "includeDir": "src"
+  }
+}
